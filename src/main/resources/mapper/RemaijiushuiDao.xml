@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RemaijiushuiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RemaijiushuiEntity" id="remaijiushuiMap">
+        <result property="jiushuimingcheng" column="jiushuimingcheng"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="jiushuileixing" column="jiushuileixing"/>
+        <result property="baozhuangxingshi" column="baozhuangxingshi"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="dushu" column="dushu"/>
+        <result property="chuzangfangfa" column="chuzangfangfa"/>
+        <result property="shengchannianfen" column="shengchannianfen"/>
+        <result property="chandi" column="chandi"/>
+        <result property="changming" column="changming"/>
+        <result property="shiyongchangjing" column="shiyongchangjing"/>
+        <result property="shengchanxukezheng" column="shengchanxukezheng"/>
+        <result property="jiushuixiangqing" column="jiushuixiangqing"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RemaijiushuiVO" >
+		SELECT * FROM remaijiushui  remaijiushui         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RemaijiushuiVO" >
+		SELECT  remaijiushui.* FROM remaijiushui  remaijiushui 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RemaijiushuiView" >
+
+		SELECT  remaijiushui.* FROM remaijiushui  remaijiushui 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RemaijiushuiView" >
+		SELECT * FROM remaijiushui  remaijiushui <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
